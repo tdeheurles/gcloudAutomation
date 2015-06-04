@@ -1,0 +1,15 @@
+{
+  "apiVersion": "v1beta1",
+  "kind": "Service",
+
+  "id": "backend0",
+
+  "port": 2500,
+  "containerPort": "backend",
+  "selector": {
+      "name": "backend",
+      "version": "0.0.0"
+  },
+  "createExternalLoadBalancer": true,
+  "labels": { "name": "backend0" }
+}

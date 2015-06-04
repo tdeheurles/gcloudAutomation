@@ -1,0 +1,39 @@
+{
+  "id": "edge001",
+  "kind": "ReplicationController",
+
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 2,
+    "replicaSelector": {
+      "name": "edge",
+      "version": "0.0.1"
+    },
+
+    "podTemplate": {
+      "desiredState": {
+        "manifest": {
+          "version": "v1beta1",
+
+          "id": "edge001",
+          "containers": [{
+            "name": "edge001",
+            "image": "gcr.io/adaptive-cloud-rnd/edge:0.0.1",
+            "ports": [{
+              "name": "edge",
+              "containerPort": 2500  }]
+          }]
+        }
+      },
+      "labels": {
+        "name": "edge",
+        "version": "0.0.1"
+      }
+    }
+  },
+
+  "labels": {
+    "name": "edge",
+    "version": "0.0.1"
+  }
+}

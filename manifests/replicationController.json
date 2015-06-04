@@ -1,0 +1,39 @@
+{
+  "id": "__SERVICE____MAJOR____MINOR____PATCH__",
+  "kind": "ReplicationController",
+
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": __REPLICAS__,
+    "replicaSelector": {
+      "name": "__SERVICE__",
+      "version": "__VERSION__"
+    },
+
+    "podTemplate": {
+      "desiredState": {
+        "manifest": {
+          "version": "v1beta1",
+
+          "id": "__SERVICE____MAJOR____MINOR____PATCH__",
+          "containers": [{
+            "name": "__SERVICE____MAJOR____MINOR____PATCH__",
+            "image": "gcr.io/__PROJECT__/__SERVICE__:__VERSION__",
+            "ports": [{
+              "name": "__SERVICE__",
+              "containerPort": __PRIVATE-PORT__  }]
+          }]
+        }
+      },
+      "labels": {
+        "name": "__SERVICE__",
+        "version": "__VERSION__"
+      }
+    }
+  },
+
+  "labels": {
+    "name": "__SERVICE__",
+    "version": "__VERSION__"
+  }
+}

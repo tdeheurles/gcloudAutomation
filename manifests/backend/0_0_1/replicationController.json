@@ -1,0 +1,39 @@
+{
+  "id": "backend001",
+  "kind": "ReplicationController",
+
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 2,
+    "replicaSelector": {
+      "name": "backend",
+      "version": "0.0.1"
+    },
+
+    "podTemplate": {
+      "desiredState": {
+        "manifest": {
+          "version": "v1beta1",
+
+          "id": "backend001",
+          "containers": [{
+            "name": "backend001",
+            "image": "gcr.io/adaptive-cloud-rnd/backend:0.0.1",
+            "ports": [{
+              "name": "backend",
+              "containerPort": 2500  }]
+          }]
+        }
+      },
+      "labels": {
+        "name": "backend",
+        "version": "0.0.1"
+      }
+    }
+  },
+
+  "labels": {
+    "name": "backend",
+    "version": "0.0.1"
+  }
+}

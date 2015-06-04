@@ -1,0 +1,15 @@
+{
+  "apiVersion": "v1beta1",
+  "kind": "Service",
+
+  "id": "__SERVICE____MAJOR__",
+
+  "port": __PUBLIC-PORT__,
+  "containerPort": "__SERVICE__",
+  "selector": {
+      "name": "__SERVICE__",
+      "version": "__VERSION__"
+  },
+  "createExternalLoadBalancer": true,
+  "labels": { "name": "__SERVICE____MAJOR__" }
+}
