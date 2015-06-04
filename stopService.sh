@@ -20,8 +20,7 @@ fi
 source ./kubernetes/config.cfg
 
 
-gcloud alpha container kubectl  \
-  --zone=$kube_zone             \
+kubectl  \
   --cluster=$kube_cluster       \
   --namespace=$1                \
   stop -f ./manifests/$2/$3_$4_$5/service.json

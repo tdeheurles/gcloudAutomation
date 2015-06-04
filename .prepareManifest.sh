@@ -1,4 +1,8 @@
 #! /bin/bash
+display_title() {
+	echo "Error on ==> Prepare Manifest <=="
+}
+
 display_usage() {
 	echo "give :"
 	echo " 1- docker username"
@@ -16,6 +20,7 @@ display_usage() {
 # if less than two arguments supplied, display usage
 if [ $# != 9 ]
 then
+	display_title
 	display_usage
 	exit 1
 fi
@@ -24,8 +29,8 @@ fi
 # making file directory
 cd manifests
 directory=$2/$3_$4_$5
-mkdir $2
-mkdir $directory
+mkdir -p $2
+mkdir -p $directory
 
 
 

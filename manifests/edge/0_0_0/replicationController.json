@@ -4,7 +4,7 @@
 
   "apiVersion": "v1beta1",
   "desiredState": {
-    "replicas": 2,
+    "replicas": 3,
     "replicaSelector": {
       "name": "edge",
       "version": "0.0.0"

@@ -26,10 +26,10 @@ export CLOUDSDK_COMPUTE_ZONE=$kube_zone
 namespace=$1
 pathToManifests=manifests/$2/$3_$4_$5
 
-gcloud alpha container kubectl	\
+kubectl	\
  	--namespace=$namespace 				\
    stop -f $pathToManifests/service.json
 
-gcloud alpha container kubectl	\
+kubectl	\
  	--namespace=$namespace 				\
    create -f $pathToManifests/service.json

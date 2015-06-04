@@ -7,12 +7,11 @@ run_script() {
 
   for file in $(ls | grep namespace)
   do
-    gcloud alpha container kubectl	\
-      --cluster=$1  \
-      --zone=$2 \
-      create -f $file
+    kubectl	create -f $file
   done
 }
+
+#--zone=$2 \
 
 source ./kubernetes/config.cfg
 

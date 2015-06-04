@@ -38,24 +38,20 @@ pathToManifests=manifests/$1/$2_$3_$4
 
 # Do the work
 # == RC
-gcloud alpha container kubectl	\
+kubectl	\
 	--namespace=$namespace        \
 	stop -f $pathToManifests/replicationController.json
 
-gcloud alpha container kubectl	\
+kubectl	\
 	--namespace=$namespace        \
   create -f $pathToManifests/replicationController.json
 
 
 # == SERVICE
-gcloud alpha container kubectl	\
+kubectl	\
  	--namespace=$namespace 				\
    stop -f $pathToManifests/service.json
 
-gcloud alpha container kubectl	\
+kubectl	\
  	--namespace=$namespace 				\
    create -f $pathToManifests/service.json
-
-# gcloud alpha container kubectl	\
-# 	--namespace=$namespace 				\
-#  	$createupdate -f $pathToManifests/service.json
