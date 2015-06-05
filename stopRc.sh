@@ -21,6 +21,5 @@ source ./kubernetes/config.cfg
 
 
 kubectl  \
-  --cluster=$kube_cluster       \
   --namespace=$1                \
   stop -f ./manifests/$2/$3_$4_$5/replicationController.json
