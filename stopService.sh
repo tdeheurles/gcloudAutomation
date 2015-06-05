@@ -17,9 +17,9 @@ then
 	exit 1
 fi
 
-source ./kubernetes/config.cfg
+source ./../default/kubernetes/config.cfg
 
 
 kubectl  \
     --namespace=$1                \
-  stop -f ./manifests/$2/$3_$4_$5/service.json
+  stop -f ./../default/manifests/$2/$3_$4_$5/service.json

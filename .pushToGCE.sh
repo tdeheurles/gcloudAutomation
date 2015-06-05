@@ -25,7 +25,7 @@ fi
 
 
 # prepare args
-source ./kubernetes/config.cfg
+source ./../default/kubernetes/config.cfg
 
 
 # Prepare env & variables
@@ -34,7 +34,7 @@ export CLOUDSDK_CONTAINER_CLUSTER=$kube_cluster
 export CLOUDSDK_COMPUTE_ZONE=$kube_zone
 
 namespace=$5
-pathToManifests=manifests/$1/$2_$3_$4
+pathToManifests=./../default/manifests/$1/$2_$3_$4
 
 # Do the work
 # == RC

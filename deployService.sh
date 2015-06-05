@@ -30,6 +30,6 @@ control_usages() {
 
 
 # ==== run
-source ./kubernetes/config.cfg
+source ./../default/kubernetes/config.cfg
 control_usages $@
 run_script $docker_username $1 $2 $3 $4 $5 $6 $7 $8

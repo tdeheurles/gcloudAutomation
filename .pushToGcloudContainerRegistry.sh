@@ -23,7 +23,7 @@ then
 fi
 
 # import env parameters
-source ./kubernetes/config.cfg
+source ./../default/kubernetes/config.cfg
 
 # Push to docker
 gcloud preview docker	push gcr.io/$kube_project/$1:$2.$3.$4

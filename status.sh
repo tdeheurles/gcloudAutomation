@@ -13,7 +13,7 @@ then
 	exit 1
 fi
 
-source ./kubernetes/config.cfg
+source ./../default/kubernetes/config.cfg
 
 export CLOUDSDK_CORE_PROJECT=$kube_project
 export CLOUDSDK_CONTAINER_CLUSTER=$kube_cluster

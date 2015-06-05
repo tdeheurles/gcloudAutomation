@@ -17,14 +17,14 @@ then
 	exit 1
 fi
 
-source ./kubernetes/config.cfg
+source ./../default/kubernetes/config.cfg
 
 export CLOUDSDK_CORE_PROJECT=$kube_project
 export CLOUDSDK_CONTAINER_CLUSTER=$kube_cluster
 export CLOUDSDK_COMPUTE_ZONE=$kube_zone
 
 namespace=$1
-pathToManifests=manifests/$2/$3_$4_$5
+pathToManifests=../default/manifests/$2/$3_$4_$5
 
 kubectl	\
  	--namespace=$namespace 				\

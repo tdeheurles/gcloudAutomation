@@ -21,7 +21,7 @@ control_usages() {
 
 control_usages $@
 
-source ./kubernetes/config.cfg
+source ./../default/kubernetes/config.cfg
 
 gcloud alpha container clusters \
   delete $kube_cluster  \

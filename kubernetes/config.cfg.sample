@@ -1,9 +1,0 @@
-# You need to change this ones
-docker_username="username"
-kube_cluster="clustername"
-
-# other default parameters
-kube_num_nodes=2
-kube_machinetype="n1-standard-1"
-kube_project="adaptive-cloud-rnd"
-kube_zone="europe-west1-b"

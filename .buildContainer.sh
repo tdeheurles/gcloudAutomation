@@ -22,9 +22,10 @@ if [[ $# != 5 ]]; then
 fi
 
 # import env parameters
-source ./kubernetes/config.cfg
+source ./../default/kubernetes/config.cfg
 
 # go to the service path
+pwd
 cd ./../../$1/
 
 

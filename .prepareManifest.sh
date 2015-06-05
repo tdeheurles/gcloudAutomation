@@ -27,26 +27,25 @@ fi
 
 
 # making file directory
-cd manifests
+manifestpath=./../default/manifests
 directory=$2/$3_$4_$5
-mkdir -p $2
-mkdir -p $directory
-
+mkdir -p manifestpath/$2
+mkdir -p manifestpath/$directory
 
 
 # parse manifests
-files=(replicationController.json service.json)
-for file in ${files[*]}
+templates=(replicationController.json service.json)
+for template in ${templates[*]}
 do
-	pathToFile=./$directory/$file
-	sed "s/__USERNAME__/$1/g" 							$file > $pathToFile
-	sed -i "s/__SERVICE__/$2/g" 						$pathToFile
-	sed -i "s/__MAJOR__/$3/g" 							$pathToFile
-	sed -i "s/__MINOR__/$4/g" 							$pathToFile
-	sed -i "s/__PATCH__/$5/g" 							$pathToFile
-	sed -i "s/__VERSION__/$3.$4.$5/g" 			$pathToFile
-	sed -i "s/__PRIVATE-PORT__/$6/g" 				$pathToFile
-	sed -i "s/__PUBLIC-PORT__/$7/g" 				$pathToFile
-	sed -i "s/__REPLICAS__/$8/g" 						$pathToFile
-	sed -i "s/__PROJECT__/$9/g" 						$pathToFile
+	pathToOutput=$manifestpath/$directory/$template
+	sed "s/__USERNAME__/$1/g" 							./templates/$template > $pathToOutput
+	sed -i "s/__SERVICE__/$2/g" 						$pathToOutput
+	sed -i "s/__MAJOR__/$3/g" 							$pathToOutput
+	sed -i "s/__MINOR__/$4/g" 							$pathToOutput
+	sed -i "s/__PATCH__/$5/g" 							$pathToOutput
+	sed -i "s/__VERSION__/$3.$4.$5/g" 			$pathToOutput
+	sed -i "s/__PRIVATE-PORT__/$6/g" 				$pathToOutput
+	sed -i "s/__PUBLIC-PORT__/$7/g" 				$pathToOutput
+	sed -i "s/__REPLICAS__/$8/g" 						$pathToOutput
+	sed -i "s/__PROJECT__/$9/g" 						$pathToOutput
 done

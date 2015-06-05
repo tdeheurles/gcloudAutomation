@@ -3,7 +3,7 @@
 # ==== What do the script
 run_script() {
 
-  cd ./manifests
+  cd ./../default/manifests
 
   for file in $(ls | grep namespace)
   do
@@ -13,6 +13,6 @@ run_script() {
 
 #--zone=$2 \
 
-source ./kubernetes/config.cfg
+source ./../default/kubernetes/config.cfg
 
 run_script $kube_cluster $kube_zone

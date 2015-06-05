@@ -17,7 +17,7 @@ then
 	exit 1
 fi
 
-source ./kubernetes/config.cfg
+source ./../default/kubernetes/config.cfg
 
 ./stopRc.sh $@
 ./stopService.sh $@
