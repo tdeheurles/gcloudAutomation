@@ -29,8 +29,8 @@ fi
 # making file directory
 manifestpath=./../default/manifests
 directory=$2/$3_$4_$5
-mkdir -p manifestpath/$2
-mkdir -p manifestpath/$directory
+mkdir -p $manifestpath/$2
+mkdir -p $manifestpath/$directory
 
 
 # parse manifests
