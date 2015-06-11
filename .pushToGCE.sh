@@ -6,16 +6,17 @@ display_title() {
 
 display_usage() {
 	echo " give :"
-	echo " 1- service to push"
-	echo " 2- a Major version"
-	echo " 3- a Minor version"
-	echo " 4- a Patch version"
-	echo " 5- the environment"
+	echo " 1- registry of container"
+	echo " 2- service to push"
+	echo " 3- a Major version"
+	echo " 4- a Minor version"
+	echo " 5- a Patch version"
+	echo " 6- the environment"
 	echo " "
 }
 
 # if less than two arguments supplied, display usage
-if [ $# != 5 ]
+if [ $# != 6 ]
 then
 	display_title
 	display_usage
@@ -33,8 +34,8 @@ export CLOUDSDK_CORE_PROJECT=$kube_project
 export CLOUDSDK_CONTAINER_CLUSTER=$kube_cluster
 export CLOUDSDK_COMPUTE_ZONE=$kube_zone
 
-namespace=$5
-pathToManifests=./../default/manifests/$1/$2_$3_$4
+namespace=$6
+pathToManifests=./../default/manifests/$1/$2/$3_$4_$5
 
 # Do the work
 # == RC

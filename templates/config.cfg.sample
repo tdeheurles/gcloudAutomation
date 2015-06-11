@@ -3,10 +3,10 @@ docker_username="username"
 kube_cluster="clustername"
 
 # other default parameters
-kube_project="adaptive-cloud-rnd"
-kube_num_nodes=3
+kube_project="cloudrnd-step8"
+kube_num_nodes=2
 
-kube_machinetype="n1-highmem-2"
+kube_machinetype="n1-standard-1"
 # f1-micro          0.6 Go
 # g1-small          1.7 Go
 # n1-standard-1     3.7 Go

@@ -1,5 +1,5 @@
 {
-  "id": "__SERVICE____MAJOR____MINOR____PATCH__",
+  "id": "__SERVICE____MAJOR____MINOR____BUILD__",
   "kind": "ReplicationController",
 
   "apiVersion": "v1beta1",
@@ -15,10 +15,10 @@
         "manifest": {
           "version": "v1beta1",
 
-          "id": "__SERVICE____MAJOR____MINOR____PATCH__",
+          "id": "__SERVICE____MAJOR____MINOR____BUILD__",
           "containers": [{
-            "name": "__SERVICE____MAJOR____MINOR____PATCH__",
-            "image": "gcr.io/__PROJECT__/__SERVICE__:__VERSION__",
+            "name": "__SERVICE____MAJOR____MINOR____BUILD__",
+            "image": "gcr.io/__REGISTRY__/__SERVICE__:__VERSION__",
             "ports": [{
               "name": "__SERVICE__",
               "containerPort": __PRIVATE-PORT__  }]

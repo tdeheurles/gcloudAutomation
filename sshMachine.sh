@@ -1,7 +1,7 @@
 #! /bin/bash
 display_usage() {
 	echo "give :"
-	echo " 1- node number or master"
+	echo " 1- name of the node"
 	echo " "
 }
 
@@ -23,12 +23,6 @@ echo "    $ sudo docker exec -i -t 3_4firstChar /bin/bash"
 echo " "
 echo " "
 
-if [[ $1 == master ]]; then
-	gcloud compute ssh \
-	  k8s-$kube_cluster-master \
-	  --zone=$kube_zone
-else
-	gcloud compute ssh \
-	  k8s-$kube_cluster-node-$1 \
-	  --zone=$kube_zone
-fi
+gcloud compute ssh \
+	$1 \
+	--zone=$kube_zone
