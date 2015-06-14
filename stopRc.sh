@@ -18,9 +18,10 @@ then
 	exit 1
 fi
 
-source ./../default/kubernetes/config.cfg
+source ./configs/config.cfg
 
 
-kubectl  \
+kubectl \
+	--kubeconfig=$kubeconfig  \
   --namespace=$1                \
 	stop -f ./../default/manifests/$2/$3/$4_$5_$6/replicationController.json

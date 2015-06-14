@@ -13,7 +13,7 @@ control_usages() {
 
 control_usages $@
 
-source ./../default/kubernetes/config.cfg
+source ./configs/config.cfg
 
 #TODO: find a better way
 if [[ $kube_zone == *"europe-west1"* ]]; then

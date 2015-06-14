@@ -1,4 +1,10 @@
 #! /bin/bash
+
+echo "This script is deprecated"
+exit 0
+
+
+
 display_title() {
 	echo "Error on ==> Build Container <=="
 }
@@ -22,7 +28,7 @@ if [[ $# != 5 ]]; then
 fi
 
 # import env parameters
-source ./../default/kubernetes/config.cfg
+source ./configs/config.cfg
 
 # go to the service path
 pwd

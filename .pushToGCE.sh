@@ -26,7 +26,7 @@ fi
 
 
 # prepare args
-source ./../default/kubernetes/config.cfg
+source ./configs/config.cfg
 
 
 # Prepare env & variables
@@ -40,19 +40,23 @@ pathToManifests=./../default/manifests/$1/$2/$3_$4_$5
 # Do the work
 # == RC
 kubectl	\
-	--namespace=$namespace        \
+	--kubeconfig=$kubeconfig  \
+	--namespace=$namespace    \
 	stop -f $pathToManifests/replicationController.json
 
 kubectl	\
-	--namespace=$namespace        \
+	--kubeconfig=$kubeconfig  \
+	--namespace=$namespace    \
   create -f $pathToManifests/replicationController.json
 
 
 # == SERVICE
 kubectl	\
- 	--namespace=$namespace 				\
+	--kubeconfig=$kubeconfig  \
+ 	--namespace=$namespace 		\
    stop -f $pathToManifests/service.json
 
 kubectl	\
- 	--namespace=$namespace 				\
+	--kubeconfig=$kubeconfig	\
+ 	--namespace=$namespace 		\
    create -f $pathToManifests/service.json

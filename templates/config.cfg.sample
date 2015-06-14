@@ -1,6 +1,6 @@
 # You need to change this ones
 docker_username="username"
-kube_cluster="clustername"
+kube_cluster="jenkins-cluster"
 
 # other default parameters
 kube_project="cloudrnd-step8"

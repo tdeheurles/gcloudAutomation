@@ -12,7 +12,7 @@ then
 	exit 1
 fi
 
-source ./../default/kubernetes/config.cfg
+source ./configs/config.cfg
 
 echo " "
 echo "Now you can :"

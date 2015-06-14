@@ -13,11 +13,7 @@ then
 	exit 1
 fi
 
-source ./../default/kubernetes/config.cfg
-
-export CLOUDSDK_CORE_PROJECT=$kube_project
-export CLOUDSDK_CONTAINER_CLUSTER=$kube_cluster
-export CLOUDSDK_COMPUTE_ZONE=$kube_zone
+source ./configs/config.cfg
 
 print_title(){
 	echo -e "\e[92m============== $1 =================\e[39m"
@@ -33,16 +29,24 @@ echo -e "\e[94m === NAMESPACE\e[39m"
 echo -e "\e[94m ====== $1\e[39m"
 
 print_title SERVICE
-kubectl $param get service
+kubectl \
+	--kubeconfig=$kubeconfig  \
+	$param get service
 
 print_title RC
-kubectl $param get rc
+kubectl \
+	--kubeconfig=$kubeconfig  \
+  $param get rc
 
 print_title PODS
-kubectl $param get pods
+kubectl \
+	--kubeconfig=$kubeconfig  \
+  $param get pods
 
 print_title NAMESPACES
-kubectl $param get namespaces
+kubectl \
+	--kubeconfig=$kubeconfig  \
+  $param get namespaces
 
 print_title FIREWALL-RULES
 gcloud compute firewall-rules list

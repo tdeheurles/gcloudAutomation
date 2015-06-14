@@ -18,7 +18,7 @@ then
 	exit 1
 fi
 
-source ./../default/kubernetes/config.cfg
+source ./configs/config.cfg
 
 export CLOUDSDK_CORE_PROJECT=$kube_project
 export CLOUDSDK_CONTAINER_CLUSTER=$kube_cluster
@@ -27,10 +27,12 @@ export CLOUDSDK_COMPUTE_ZONE=$kube_zone
 namespace=$1
 pathToManifests=../default/manifests/$2/$3/$4_$5_$6
 
-kubectl	\
+kubectl \
+	--kubeconfig=$kubeconfig  \
  	--namespace=$namespace 				\
    stop -f $pathToManifests/service.json
 
-kubectl	\
+kubectl \
+	--kubeconfig=$kubeconfig  \
  	--namespace=$namespace 				\
    create -f $pathToManifests/service.json

@@ -13,7 +13,7 @@ control_usages() {
 
 control_usages $@
 
-source ./../default/kubernetes/config.cfg
+source ./configs/config.cfg
 
 gcloud compute firewall-rules delete $1 \
   --quiet

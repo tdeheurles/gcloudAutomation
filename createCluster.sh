@@ -11,7 +11,7 @@ main() {
 
 
 # ==== run
-source ./../default/kubernetes/config.cfg
+source ./configs/config.cfg
 main \
   $kube_project \
   $kube_zone \

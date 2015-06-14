@@ -25,5 +25,5 @@ run_script(){
 
 # ==== main ====
 control_usages $@
-source ./../default/kubernetes/config.cfg
+source ./configs/config.cfg
 run_script $1 $2 $3 $4 $5

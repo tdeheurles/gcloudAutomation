@@ -15,7 +15,7 @@ control_usages() {
 
 control_usages $@
 
-source ./../default/kubernetes/config.cfg
+source ./configs/config.cfg
 
 gcloud compute firewall-rules create $1-$2 \
   --allow tcp:$2                \

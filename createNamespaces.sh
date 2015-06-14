@@ -7,12 +7,14 @@ run_script() {
 
   for file in $(ls | grep namespace)
   do
-    kubectl	create -f $file
+    kubectl	\
+      --kubeconfig=$kubeconfig  \
+      create -f $file
   done
 }
 
 #--zone=$2 \
 
-source ./../default/kubernetes/config.cfg
+source ./configs/config.cfg
 
 run_script $kube_cluster $kube_zone

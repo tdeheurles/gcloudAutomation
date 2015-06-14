@@ -1,7 +1,7 @@
 #! /bin/bash
 cd ..
 
-source ./default/kubernetes/config.cfg
+source ./configs/config.cfg
 
 gcloud alpha container get-credentials --cluster=$kube_cluster --zone=$kube_zone
 
