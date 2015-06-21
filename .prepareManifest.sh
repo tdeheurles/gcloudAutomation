@@ -27,7 +27,7 @@ fi
 
 
 # making file directory
-manifestpath=./../default/manifests
+manifestpath=./manifests
 directory=$1/$2/$3_$4_$5
 mkdir -p $manifestpath/$1
 mkdir -p $manifestpath/$1/$2

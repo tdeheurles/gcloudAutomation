@@ -35,7 +35,7 @@ export CLOUDSDK_CONTAINER_CLUSTER=$kube_cluster
 export CLOUDSDK_COMPUTE_ZONE=$kube_zone
 
 namespace=$6
-pathToManifests=./../default/manifests/$1/$2/$3_$4_$5
+pathToManifests=./manifests/$1/$2/$3_$4_$5
 
 # Do the work
 # == RC
